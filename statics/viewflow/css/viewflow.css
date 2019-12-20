@@ -1,0 +1,71 @@
+main .row .row {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem; }
+
+.side-nav li.active > a > span.badge {
+  color: #fff; }
+
+.task-detail {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  padding-top: 1rem; }
+  .task-detail .input-field {
+    margin-top: 0; }
+  .task-detail h6 {
+    font-size: 0.7rem;
+    line-height: 0.3rem; }
+
+/* PROCESS DASHBAORD */
+.dashboard {
+  display: flex;
+  align-items: stretch;
+  height: calc(100% - 102px);
+  max-width: 100%;
+  padding-left: 5px;
+  padding-right: 10px; }
+  .dashboard .dashboard-content {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    max-width: 100%;
+    padding-top: 10px;
+    padding-bottom: 15px; }
+    .dashboard .dashboard-content > .ps-scrollbar-y-rail {
+      display: none; }
+  .dashboard .column {
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-left: 5px;
+    background: #ddd; }
+    .dashboard .column .column-title {
+      line-height: 45px;
+      font-size: 1.2rem;
+      margin-left: 15px; }
+    .dashboard .column .column-content {
+      position: relative; }
+      .dashboard .column .column-content.ps-container > .ps-scrollbar-y-rail {
+        opacity: 0.9 !important; }
+    .dashboard .column .column-action {
+      line-height: 45px;
+      text-align: center; }
+  .dashboard .card {
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 0;
+    margin-bottom: 0.5rem; }
+    .dashboard .card .card-content {
+      padding: 10px 15px 10px 15px; }
+    .dashboard .card .card-action {
+      padding: 8px; }
+    .dashboard .card .detail {
+      padding-top: 5px;
+      padding-bottom: 5px; }
+      .dashboard .card .detail > label {
+        display: block; }
+
+.sidenav .collapsible-body > ul:not(.collapsible) > li.active li:not(.active) a,
+.sidenav.sidenav-fixed .collapsible-body > ul:not(.collapsible) > li.active li:not(.active) a {
+  color: rgba(0, 0, 0, 0.87); }

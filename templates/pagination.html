@@ -1,0 +1,27 @@
+{% if is_paginated %}
+<div class="dataTables_paginate paging_simple_numbers">
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}" class="paginate_button previous">&laquo;</a>
+    {% else %}
+        <li class="paginate_button previous disabled"><span>&laquo;</span></li>
+    {% endif %}
+
+    <span>
+        {% for i in paginator.page_range %}
+            {% if i <= page_obj.number|add:5 and i >= page_obj.number|add:-5 %}
+                {% if page_obj.number == i %}
+                    <a class="paginate_button current">{{ i }}</a>
+                {% else %}
+                    <a class="paginate_button" href="?page={{ i }}">{{ i }}</a>
+                {% endif %}        
+            {% endif %}
+        {% endfor %}
+    </span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="paginate_button next">&raquo;</a>
+    {% else %}
+        <li class="paginate_button next disabled"><span>&raquo;</span></li>
+    {% endif %}
+</div>
+{% endif %}

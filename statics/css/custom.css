@@ -1,0 +1,6 @@
+.card .card-action {
+    position:relative;
+    background-color:inherit;
+    border-top: 0px solid hsla(0,0%,63%,.2);
+    padding:16px 24px;
+}

@@ -1,0 +1,16 @@
+<h1>Listado filtrado mediante class-based views (vista basada clase)</h1>
+
+<form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit">Filtrar</button>
+</form>
+
+{% if object_list %}
+    <ul>
+    {% for object in object_list %}
+        <li>{{object}}</a></li>
+    {% endfor %}
+        </ul>
+{% else %}
+    <p>Nothing to see here!.</p>
+{% endif %}

@@ -1,0 +1,38 @@
+{% extends "layout/base-form.html" %}
+{% load static %}
+{% load material_form %}
+
+{% block breadcrumbs %}
+    <a class="nav-wrapper" href="{% url 'tercero:empr_listado' %}">Empresas</a>
+    <a class="active">Formulario</a>
+{% endblock %}
+
+
+{% block left-panel %}
+    <form method="POST">
+        {% csrf_token %}
+        {% form %}
+        {% endform %}
+
+        <div class="right-align">
+            <button type="submit" class="save btn btn-default">Grabar</button>
+        </div>
+    </form>
+{% endblock %}
+
+{% block right-panel %}
+    <div class="card">
+        <div class="card-content">
+            <div class="card-title">Agregar</div>
+            <a class="btn-floating btn-large waves-effect waves-light green z-depth-2" href="{% url 'comunes:domi_nuevo' %}">
+                <i class="large material-icons">location_on</i>
+            </a>
+            <a class="btn-floating btn-large waves-effect waves-light green z-depth-2" href="{% url 'comunes:comu_nuevo' %}">
+                <i class="large material-icons">phone</i>
+            </a>
+            <a class="btn-floating btn-large waves-effect waves-light green z-depth-2" href="{% url 'tercero:come_nuevo' %}">
+                <i class="large material-icons">person</i>
+            </a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 575 275" preserveAspectRatio="xMidYMid">
+    <defs>
+        <path id="end-marker-path" transform="rotate(180 2.5 2.5)"
+              stroke-linecap="round" d="M5,0 0,2.5 5,5 3.5,3 3.5,2z"
+              stroke-width="1.0000" fill="#000" stroke="none"/>
+        <marker id="end-marker" markerHeight="5" markerWidth="5" orient="auto" refX="2.5" refY="2.5" >
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#end-marker-path"
+                 stroke-width="1.0000" fill="#000" stroke="none"/>
+        </marker>
+    </defs>
+    <style type="text/css"><![CDATA[    
+        g.done circle.event,
+        g.done path.event,
+        g.done circle.end-event,
+        g.done path.gateway,
+        g.done rect.task
+        {
+            fill: #c8e6c9;
+            fill-opacity:0.5;
+        }
+    
+        g.scheduled circle.event,
+        g.scheduled path.event,
+        g.scheduled circle.end-event,
+        g.scheduled path.gateway,
+        g.scheduled rect.task
+        {
+            fill: #b3e5fc;
+            fill-opacity:0.5;
+        }
+    
+        g.started circle.event,
+        g.started path.event,
+        g.started circle.end-event,
+        g.started path.gateway,
+        g.started rect.task
+        {
+            fill: #ffa726;
+            fill-opacity:0.5;
+        }
+    
+        g.new circle.event,
+        g.new path.event,
+        g.new circle.end-event,
+        g.new path.gateway,
+        g.new rect.task
+        {
+            fill: #42a5f5;
+            fill-opacity:0.5;
+        }
+    
+        g.error circle.event,
+        g.error path.event,
+        g.error circle.end-event,
+        g.error path.gateway,
+        g.error rect.task
+        {
+            fill: #f44336;
+            fill-opacity:0.5;
+        }
+    
+        g.canceled circle.event,
+        g.canceled path.event,
+        g.canceled circle.end-event,
+        g.canceled path.gateway,
+        g.canceled rect.task
+        {
+            fill: #90a4ae;
+            fill-opacity:0.5;
+        }
+    
+        g.assigned circle.event,
+        g.assigned path.event,
+        g.assigned circle.end-event,
+        g.assigned path.gateway,
+        g.assigned rect.task
+        {
+            fill: #ffeb3b;
+            fill-opacity:0.5;
+        }
+    
+        circle.event,
+        path.event {
+            fill: none;
+            stroke: #000;
+        }
+
+        circle.end-event {
+            stroke-width: 4;
+        }
+
+        path.event-marker {
+            fill: none;
+            stroke: #000;
+        }
+
+        path.gateway {
+            fill: none;
+            stroke: #000;
+            stroke-width: 1.1;
+        }
+
+        text.gateway-marker {
+            font-weight: bold;
+            font-family: 'Arial';
+            text-anchor: middle;
+            alignment-baseline: baseline;
+        }
+
+        rect.task {
+            fill: none;
+            stroke: #000;
+            stroke-width: 1.1;
+        }
+
+        text.align-middle {
+            font-family: 'Arial';
+            text-anchor: middle;
+            alignment-baseline: central;
+        }
+
+        path.task-marker {
+            fill: none;
+            stroke: #000;
+            stroke-width: 1.1;
+        }
+        ]]>
+    </style>
+    
+    <g id="start" transform="translate(0, 50)">
+        
+        
+            <circle class="event" cx="25" cy="25" r="25"/>
+        
+        
+    </g>
+    
+    <g id="approve" transform="translate(75, 25)">
+        
+        
+            <rect class="task" width="150" height="100" rx="5" ry="5"/>
+        
+        
+        <text class="align-middle" font-size="12px" x="75" y="50.0">Aprobar</text>
+        
+    </g>
+    
+    <g id="check_approve" transform="translate(250, 50)">
+        
+        
+            <path class="gateway" d="M25,0L50,25L25,50L0,25L25,0"/>
+            <text class="gateway-marker" font-size="16px" x="25" y="31">X</text>
+        
+        
+    </g>
+    
+    <g id="send" transform="translate(325, 150)">
+        
+        
+            <rect class="task" width="150" height="100" rx="5" ry="5"/>
+            <path class="task-label"
+                  d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65
+                     c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1
+                     c-.52-.4-1.08-.73-1.69-.98l-.38-2.65 C14.46 2.18 14.25 2 14 2
+                     h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1
+                     c-.23-.09-.49 0-.61.22 l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65
+                     c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64
+                     l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65
+                     c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65
+                     c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46
+                     c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5
+                     s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+        
+        
+        <text class="align-middle" font-size="12px" x="75" y="50.0">Enviar Mensaje</text>
+        
+    </g>
+    
+    <g id="end" transform="translate(500, 50)">
+        
+        
+            <circle class="event end-event" cx="25" cy="25" r="25"/>
+        
+        
+    </g>
+    
+    <path fill="none" stroke="#000000" stroke-width="2" id="start__approve" marker-end="url(#end-marker)"
+          d="M52, 75 L68, 75"/>
+
+    
+    <path fill="none" stroke="#000000" stroke-width="2" id="approve__check_approve" marker-end="url(#end-marker)"
+          d="M227, 75 L243, 75"/>
+
+    
+    <path fill="none" stroke="#000000" stroke-width="2" id="check_approve__send" marker-end="url(#end-marker)"
+          d="M275, 102 L275, 200 L318, 200"/>
+
+    
+    <path fill="none" stroke="#000000" stroke-width="2" id="check_approve__end" marker-end="url(#end-marker)"
+          d="M302, 75 L493, 75"/>
+
+    
+    <path fill="none" stroke="#000000" stroke-width="2" id="send__end" marker-end="url(#end-marker)"
+          d="M477, 200 L525, 200 L525, 107"/>
+
+    
+</svg>

@@ -1,0 +1,8 @@
+table[type="auditoria"],
+td[type="auditoria"],
+th[type="auditoria"] {
+    font-size: 10px;
+    line-height: 0;
+    border-collapse: unset;
+    border-bottom: unset;
+}

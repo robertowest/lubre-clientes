@@ -1,0 +1,45 @@
+{% extends "layout/base-list.html" %}
+{% load static %}
+
+{% block breadcrumbs %}
+    <a class="active" href="persona/">Personas</a>
+{% endblock %}
+
+{% block main-content %}
+    <div class="card-content">
+        <!--
+        <a class="btn btn-primary" href="{% url 'persona:persona_create' %}">
+            Nueva Persona
+        </a>
+        -->
+        <table id="table" class="table bordered" data-form-control="datatable" style="width:100%">
+            <thead>
+                <tr>
+                    <th class="sorting_disabled">ID</th>
+                    <th class="sorting_disabled">Nombre</th>
+                    <th class="sorting_disabled">Sexo</th>
+                    <th class="sorting_disabled">Tipo</th>
+                    <th class="sorting_disabled">Número</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="display:none"><td></td></tr>
+                {% for object in object_list %}
+                <tr>
+                    <td>{{object.pk}}</td>
+                    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+                    <td>{{ object.sexo }}</td>
+                    <td>{{ object.doc_tipo }}</td>
+                    <td>{{ object.numero }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large waves-effect waves-light green z-depth-2" href="{% url 'persona:persona_create' %}">
+            <i class="large material-icons">add</i>
+        </a>
+    </div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout/base-list-filter.html" %}
+{% load static %}
+{% load material_form %}
+
+{% block breadcrumbs %}
+    <a class="active" href="{% url 'tercero:empr_listado' %}">Empresas</a>
+{% endblock %}
+
+{% block main-content %}
+    <div class="card-content">
+        {% comment %}
+        <a class="btn btn-primary" href="{% url 'tercero:empr_nuevo' %}">
+            Nueva empresa
+        </a>
+        {% endcomment %}
+
+        <table id="table" class="table bordered" data-form-control="datatable" style="width:100%">
+            <thead>
+                <tr>
+                    <th class="sorting_disabled">Razon Social</th>
+                    <th class="sorting_disabled">CUIT</th>
+                    <th class="sorting_disabled">Comercial</th>
+                    <th class="sorting_disabled">Actividad</th>
+                    <th class="sorting_disabled">Activo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="display:none"><td></td></tr>
+                {% for object in object_list %}
+                <tr>
+                    <td><a href="{{object.get_absolute_url}}">{{object.razon_social}}</a></td>
+                    <td>{{object.cuit}}</td>
+                    <td>{{object.comercial}}</td>
+                    <td>{{object.actividad.texto}}</td>
+                    <td>{{object.active|yesno:"Sí,No"}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {# paginación #}
+        {% include 'pagination.html' %}
+    </div>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large waves-effect waves-light green z-depth-2" href="{% url 'tercero:empr_nuevo' %}">
+            <i class="large material-icons">add</i>
+        </a>
+    </div>
+{% endblock %}
+
+
+{% block fields-filter %}
+    {{ filter.form.as_p }}
+{% endblock%}

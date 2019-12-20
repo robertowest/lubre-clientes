@@ -1,0 +1,49 @@
+{% extends "layout/base-2col.html" %}
+
+{% block main-content %}
+
+    <div class="card-title">Introduction</div>
+    <div class="row">
+        <div class="col s12 m12 l9">
+            Welcome to the Viewflow demo suite.
+            <br/><br/>
+            Viewflow is the lightweight reusable workflow library that helps to organize people collaboration business logic in django applications.
+            In conjunction with django-material they could be used as the framework to build ready to use  business applications in a minutes.
+            <br/><br/>
+            This is live demo for the django-viewflow and django-material libraries and their PRO versions.
+            <br/><br/>
+        </div>
+    </div>
+    <hr>
+    <div class="card-title">Introducción</div>
+    <div class="row">
+        <div class="col s12 m12 l9">
+            Bienvenido a la suite de demostración de Viewflow.
+            <br/><br/>
+            Viewflow es la biblioteca de flujo de trabajo reutilizable y liviana que ayuda a organizar la lógica empresarial de la colaboración entre personas en las aplicaciones django. Junto con el material django, se podrían usar como marco para crear aplicaciones empresariales listas en solo minutos.
+            <br/><br/>
+            Esta es una demostración en vivo para las bibliotecas de django-viewflow y django-material y sus versiones PRO.
+            <br/><br/>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block right-panel %}
+    <ul class="collection with-header">
+        <li class="collection-header">
+            <h5 style="font-size: 24px;font-weight: 300;">Links</h5>
+        </li>
+        <li class="collection-item">
+            <a data-turbolinks="false" href="https://material.io/tools/icons/?style=baseline" target="_blank"><i class="left material-icons">web</i> Iconos</a>
+        </li>
+        <li class="collection-item">
+            <a data-turbolinks="false" href="http://docs.viewflow.io/forms_themes.html" target="_blank"><i class="left mdi mdi-github-circle mdi-24px"></i> Temas</a>
+        </li>
+        <li class="collection-item">
+            <a data-turbolinks="false" href="#" target="_blank"><i class="left material-icons">receipt</i> Cookbook Examples</a>
+        </li>
+        <li class="collection-item">&nbsp;</li>
+    </ul>
+{% endblock %}
+

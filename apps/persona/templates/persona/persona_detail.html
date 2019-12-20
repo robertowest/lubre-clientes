@@ -1,0 +1,85 @@
+{% extends "layout/base-detail.html" %}
+{% load static %}
+
+{% block breadcrumbs %}
+    <a class="nav-wrapper" href="/persona/">Personas</a>
+    <a class="active">Detalle</a>
+{% endblock %}
+
+{% block left-panel %}
+    <div class="card-content">
+        <div class="card-title">{{object}}</div>
+        <table class="table bordered">
+            <tr><th>Nombre</th><td>{{ object.nombre }}</td></tr>
+            <tr><th>Apellido</th><td>{{ object.apellido }}</td></tr>
+            <tr><th>Sexo</th><td>{{ object.sexo }}</td></tr>
+            <tr><th>Tipo Doc.</th><td>{{ object.doc_tipo }}</td></tr>
+            <tr><th>Número</th><td>{{ object.numero }}</td></tr>
+            <tr><th>F.Nacimiento</th><td>{{ object.fnacimiento }}</td></tr>
+        </table>
+    </div>
+    <div class="card-action">
+        <div class="right-align">
+            <a class="waves-effect waves-light btn red white-text" href="#">Eliminar</a>
+            <a class="waves-effect waves-light btn white-text" href="{{object.get_update_url}}">Modificar</a>
+        </div>
+    </div>
+
+    {# información de tablas relacionadas #}
+    {% comment %}
+    <div class="card">
+        <div class="card-content">
+            <div class="card-title">Posiciones</div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Posición</td>
+                        <td>Desde</td>
+                        <td>Hasta</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Senior Engineer</td>
+                        <td>26 de Junio de 1986</td>
+                        <td>1 de Enero de 9999</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-action right-align">
+            <a href="#" class="btn">Modificar</a>
+        </div>
+    </div>
+    {% endcomment %}
+{% endblock %}
+
+
+{% block right-panel %}
+    <div class="card-content">
+        <div class="card-title">Auditoría</div>
+        <table>
+            {% comment %}
+            <tr>
+                <th>Activo</th>
+                <td>{{ object.active }}</td>
+            </tr>
+            {% endcomment %}
+            <tr>
+                <td><b>Activo:</b> {{ object.active }}</td>
+            </tr>
+            <tr>
+                <td><b>Creado:</b> {{ object.created }}</td>
+            </tr>
+            <tr>
+                <td><b>Por:</b> {{ object.created_by }}</td>
+            </tr>
+            <tr>
+                <td><b>Modif.:</b> {{ object.modified }}</td>
+            </tr>
+            <tr>
+                <td><b>Por:</b> {{ object.modified_by }}</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

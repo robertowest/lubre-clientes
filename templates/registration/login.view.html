@@ -1,0 +1,59 @@
+{% extends "layout/base-login.html" %}
+{% load staticfiles %}
+
+
+    <form method="post" action="{% url 'login' %}" class="form-signin">
+        {% csrf_token %}
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+        <div class="checkbox mb-3">
+            <label>
+            <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Sign in</button>
+        <input type="hidden" name="next" value="{{ next }}" />
+
+        {# Assumes you setup the password_reset view in your URLconf #}
+        <p class="mt-5 mb-3 text-muted">
+            <a href="{% url 'password_reset' %}">Lost password?</a>
+        </p>
+    </form>
+
+
+{% block content %}
+    <dmc-turbolinks/>
+    <div class="registration" style="background:url({% static 'viewflow/img/background.svg' %})">
+        <div class="sidebar z-depth-3">
+            <h4></h4>
+            <form action="" method="post" id="login-form">
+                {% csrf_token %}
+
+                <input type='hidden' name='csrfmiddlewaretoken' value='x789EB6l32erLwsvt8keQqMJSuag2qTroY0Q4FembzgaExzgS8QeW4Yi1PpidKJi' />
+                <div class="row">
+                    <div class="input-field col s12 required" id="id_username_container">
+                        <i class="material-icons prefix">account_box</i><input id="id_username" maxlength="254" name="username" type="text" autofocus>
+                        <label for="id_username">Nombre de usuario</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 required" id="id_password_container">
+                        <i class="material-icons prefix">lock</i><input id="id_password" name="password" type="password">
+                        <label for="id_password">Contraseña</label>
+                    </div>
+                </div>
+                <div class="action right-align">
+                    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                </div>
+            </form>
+        </div>
+        <div class="logo">
+            <i class="logo__icon material-icons">account_circle</i>
+        </div>
+    </div>
+    <dmc-snackbar>
+    </dmc-snackbar>
+{% endblock %}

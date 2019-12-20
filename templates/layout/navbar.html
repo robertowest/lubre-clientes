@@ -1,0 +1,28 @@
+<nav class="topbar">
+    <div class="nav-wrapper">
+        <dmc-sidenav-trigger>
+            <a href="#" data-target="slide-out" class="sidenav-trigger">
+                <i class="material-icons mdi">menu</i>
+            </a>
+        </dmc-sidenav-trigger>
+        <div class="brand-logo">
+            Lubre SRL
+        </div>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li id="login_as_menu" style="position:relative;top:54px">
+                <a style="margin-top:-54px" class="dropdown-button" href="#!" data-target="user-login-as-menu">
+                    <i class="material-icons right">arrow_drop_down</i>Acciones
+                </a>
+            </li>
+            <ul id="user-login-as-menu" class="dropdown-content"  style="min-width:200px">
+                {% if user.is_authenticated %}
+                    <li><a data-turbolinks="false" href="#">Perfil</a></li>
+                    <li><a data-turbolinks="false" href="{% url 'usuario:logout' %}">Salir</a></li>
+                {% else %}
+                    <li><a data-turbolinks="false" href="{% url 'usuario:login' %}">Ingresar</a></li>
+                    <li><a data-turbolinks="false" href="#">Registrarse</a></li>
+                {% endif %}
+            </ul>
+        </ul>
+    </div>
+</nav>

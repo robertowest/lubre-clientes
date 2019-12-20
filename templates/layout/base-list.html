@@ -1,0 +1,15 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+
+    <div class="left-panel wide">
+        <div class="card list-card">
+            {% block main-content %}panel izquierdo{% endblock %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {# include "layout/footer.html" #}
+{% endblock %}

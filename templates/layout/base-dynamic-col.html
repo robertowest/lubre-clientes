@@ -1,0 +1,129 @@
+{% extends "layout/base.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    <link href="{% static 'viewflow/css/viewflow.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+
+    <div class="dashboard">
+        <div class="dashboard-content">
+
+            <div class="column">
+                <span class="column-title">Columna 1</span>
+                <div class="column-content">
+                    <div class="card">
+                        <div class="card-content">
+                            Este proceso demuestra hola mundo aprobación solicitud de flujo.<br/><br/>
+                            <a class="modal-trigger" href="#graph">
+                                <img class="responsive-img" src="{% static 'viewflow/img/graph.svg' %}" alt="flow graph" style="height:80%"/>
+                            </a>
+                        </div>
+                        <div class="card-action right-align">
+                            <a class="btn" href="#">Nuevo mensaje</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column-action">
+                    <a href="#" class="grey-text">Mostrar todo</a>
+                </div>
+            </div>
+            <div class="column">
+                <span class="column-title">Columna 2</span>
+                <div class="column-content">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-title">#11021/387909</div>
+                            'Hola mundito!' mensaje al mundo
+                            <div class="detail">
+                                <label>Creado</label>
+                                24 de Marzo de 2019 a las 07:57
+                            </div>
+                        </div>
+                        <div class="card-action right-align">
+                            <a href="#" class="btn">Asignar</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-title">#10986/387671</div>
+                            'Hello' mensaje al mundo
+                            <div class="detail">
+                                <label>Creado</label>
+                                21 de Marzo de 2019 a las 14:34
+                            </div>
+                            <div class="detail">
+                                <label>Assigned</label>
+                                helloworld/manager
+                            </div>
+                        </div>
+                        <div class="card-action right-align">
+                            <a href="#" class="btn primary white-text">Detalle</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-title">#10976/387595</div>
+                            'test' mensaje al mundo
+                            <div class="detail">
+                                <label>Creado</label>
+                                21 de Marzo de 2019 a las 09:35
+                            </div>
+                        </div>
+                        <div class="card-action right-align">
+                            <a href="#" class="btn">Asignar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <span class="column-title">Columna 3</span>
+                <div class="column-content">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-title">#10987 - Fin</div>
+                            'Hello world' mensaje al mundo
+                            <div class="detail">
+                                <label>Creado</label>
+                                24 de Marzo de 2019 a las 07:21
+                            </div>
+                        </div>
+                        <div class="card-action right-align">
+                            <a href="/workflow/helloworld/helloworld/10987/end/387907/detail/?" class="btn primary white-text">Detalle</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-title">#10991 - Fin</div>
+                            'holiii' mensaje al mundo
+                            <div class="detail">
+                                <label>Creado</label>
+                                24 de Marzo de 2019 a las 06:18
+                            </div>
+                        </div>
+                        <div class="card-action right-align">
+                            <a href="/workflow/helloworld/helloworld/10991/end/387905/detail/?" class="btn primary white-text">Detalle</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column-action">
+                    <a href="#" class="grey-text">Mostrar todo</a>
+                </div>
+            </div>
+            <div class="column">
+                <span class="column-title">Columna n...</span>
+                <div class="column-content">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'viewflow/js/viewflow.js' %}"></script>
+{% endblock %}

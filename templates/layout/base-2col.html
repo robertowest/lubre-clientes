@@ -1,0 +1,28 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+
+    <div class="left-panel">
+        <div class="card">
+            <div class="card-content">
+                {% block main-content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="right-panel">
+        <div class="card">
+            {% comment %}
+            <div class="card-content">
+            </div>
+            {% endcomment %}
+
+            {% block right-panel %}
+            {% endblock %}
+        </div>
+
+    </div>
+
+{% endblock %}
+

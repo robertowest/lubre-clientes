@@ -1,0 +1,49 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block head %}
+    <link href="{% static 'css/auditoria.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="left-panel">
+        {% block left-panel %}
+        {% endblock %}
+    </div>
+
+    <!-- panel de auditoría -->
+    <div class="right-panel">
+        {% block right-panel %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-title">Auditoría</div>
+                <table type="auditoria">
+                    <tr>
+                        <th>Activo</th>
+                        <td>{{ object.active }}</td>
+                    </tr>
+                    <tr>
+                        <th>Creado</th>
+                        <td>{{ object.created }}</td>
+                    </tr>
+                    <tr>
+                        <th>Creado por</th>
+                        <td>{{ object.created_by }}</td>
+                    </tr>
+                    <tr>
+                        <th>Modificado</th>
+                        <td>{{ object.modified }}</td>
+                    </tr>
+                    <tr>
+                        <th>Modif. por</th>
+                        <td>{{ object.modified_by }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

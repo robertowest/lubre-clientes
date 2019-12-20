@@ -1,0 +1,34 @@
+{% extends "layout/base-login.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="registration" style="background:url({% static 'viewflow/img/background.svg' %})">
+        <div class="sidebar z-depth-3">
+            <h4>Inicio</h4>
+            <form method="post" action="{% url 'login' %}" class="form-signin">
+                {% csrf_token %}
+
+                <div class="row">
+                    <div class="input-field col s12 required" id="userName_container">
+                        <i class="material-icons prefix">account_box</i>
+                        <input id="userName" maxlength="254" name="username" type="text" autofocus>
+                        <label for="userName">Nombre de usuario</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 required" id="password_container">
+                        <i class="material-icons prefix">lock</i>
+                        <input id="password" name="password" type="password">
+                        <label for="password">Contraseña</label>
+                    </div>
+                </div>
+                <div class="action right-align">
+                    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                </div>
+            </form>
+        </div>
+        <div class="logo">
+            <i class="logo__icon material-icons">account_circle</i>
+        </div>
+    </div>
+{% endblock %}

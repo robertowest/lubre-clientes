@@ -1,0 +1,30 @@
+{% extends "layout/base-2col.html" %}
+
+{% block content %}
+
+    <div class="left-panel wide">
+        <div class="card list-card">
+            {% block main-content %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <div class="right-panel">
+        <form method="GET" data-control-form>
+            {% csrf_token %}
+            <div class="card form-card">
+                <div class="card-content">
+                    <span class="card-title">Filtro</span>
+                    <div class="row">
+                        {% block fields-filter %}
+                        {% endblock %}
+                    </div>
+                    <div class="right-align">
+                        <button type="submit" class="btn btn-default">Filtro</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

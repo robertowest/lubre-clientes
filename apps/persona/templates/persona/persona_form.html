@@ -1,0 +1,22 @@
+{% extends "layout/base-form.html" %}
+{% load static %}
+{% load material_form %}
+
+{% block breadcrumbs %}
+    <a class="nav-wrapper" href="/persona/">Personas</a>
+    <a class="active">Alta o Modificación</a>
+{% endblock %}
+
+
+{% block left-panel %}
+    <form method="POST">
+        {% csrf_token %}
+        {% form %}
+            {% part form.fnacimiento prefix %}<i class="material-icons prefix">insert_invitation</i>{% endpart %}
+        {% endform %}
+
+        <div class="right-align">
+            <button type="submit" class="save btn btn-default">Save</button>
+        </div>
+    </form>
+{% endblock %}

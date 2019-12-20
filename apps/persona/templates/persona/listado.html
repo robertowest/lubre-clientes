@@ -1,0 +1,53 @@
+{% extends "layout/base-list-filter.html" %}
+{% load static %}
+
+{% block breadcrumbs %}
+    <a class="active" href="{% url 'persona:listado' %}">Personas</a>
+{% endblock %}
+
+{% block main-content %}
+    <div class="card-content">
+        {% comment %}
+        <a class="btn btn-primary" href="{% url 'persona:nuevo' %}">
+            Nueva persona
+        </a>
+        {% endcomment %}
+        <table id="table" class="table bordered" data-form-control="datatable" style="width:100%">
+            <thead>
+                <tr>
+                    <th class="sorting_disabled">Nombre</th>
+                    <th class="sorting_disabled">DNI</th>
+                    <th class="sorting_disabled">Activo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="display:none"><td></td></tr>
+                {% for object in object_list %}
+                <tr>
+                    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+                    <td>{{object.documento}}</td>
+                    <td>{{object.active|yesno:"Sí,No"}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {# paginación #}
+        {% include 'pagination.html' %}
+    </div>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large waves-effect waves-light green z-depth-2" href="{% url 'persona:nuevo' %}">
+            <i class="large material-icons">add</i>
+        </a>
+    </div>
+{% endblock %}
+
+{% block fields-filter %}
+    <div class="input-field col s12" id="id_busqueda_container">
+        <input id="id_busqueda" name="busqueda" type="text">
+        <label for="id_busqueda">Texto</label>
+    </div>
+{% endblock %}
+
+
