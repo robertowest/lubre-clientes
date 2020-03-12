@@ -1,6 +1,4 @@
 # lubre
 aplicación en desarrollo ....
 
-# lubre
-
-_aplicación en desarollo (Django 2.1)_
+Esta aplicación utiliza _Material Design_ la descarto y utilizaré _AdminLTE2_, el  nuevo repositrio se llama lubre_clientes
